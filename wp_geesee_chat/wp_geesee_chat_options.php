@@ -3,6 +3,7 @@
 Description: GeeSee Chat options
 */
 
+		
 $plugin_location = dirname(__FILE__) . DIRECTORY_SEPARATOR . 'wp_geesee_chat.php';
 $plugin_data = get_plugin_data($plugin_location);
 $location = get_option('siteurl') . '/wp-admin/admin.php?page=wp_geesee_chat/wp_geesee_chat_options.php'; // Form Action URI

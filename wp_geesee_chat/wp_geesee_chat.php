@@ -78,4 +78,25 @@ function wp_add_geesee_chat() {
 	printf('<a href="http://www.geesee.com/sys/geesee.ashx?chatid=1027&DefaultRoomName=%s" target="_blank">START CHAT</a>', $gc_default_room);
 }
 
+function widget_chat() {
+	
+	// Check for the required API functions
+	if ( !function_exists('register_sidebar_widget') || !function_exists('register_widget_control') )
+		return;
+	function widget_chat1() {
+?>
+    <li class="sideblock">
+     <h2>Chat</h2>
+     <ul>
+  		<li><?php wp_add_geesee_chat(); ?></li> 
+     </ul>	
+    </li>
+<?php
+}		
+
+if ( function_exists('register_sidebar_widget') )
+    register_sidebar_widget(__('Geesee Chat'), 'widget_chat1');	
+}
+add_action('widgets_init', 'widget_chat');
+
 ?>
